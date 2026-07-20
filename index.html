@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Пульс Любови — макет</title>
+<title>Пульс Любови</title>
 <style>
 :root{
   --bg1:#faf7ff; --bg2:#eef8ff; --ink:#1f2850; --soft:#687197;
@@ -15,103 +15,69 @@
 *{box-sizing:border-box}
 body{
   margin:0;
+  min-height:100vh;
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   color:var(--ink);
   background:
-    radial-gradient(circle at 12% 14%,rgba(123,77,255,.18),transparent 28%),
-    radial-gradient(circle at 88% 8%,rgba(239,99,199,.16),transparent 26%),
-    radial-gradient(circle at 10% 90%,rgba(74,199,255,.15),transparent 24%),
+    radial-gradient(circle at 12% 12%,rgba(123,77,255,.18),transparent 28%),
+    radial-gradient(circle at 88% 10%,rgba(239,99,199,.15),transparent 27%),
+    radial-gradient(circle at 12% 92%,rgba(74,199,255,.14),transparent 26%),
     linear-gradient(145deg,var(--bg1),var(--bg2));
-  min-height:100vh;
 }
-.wrap{max-width:1420px;margin:0 auto;padding:22px}
-.hero{
-  display:grid;grid-template-columns:1.15fr .85fr;gap:18px;
-  background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(248,244,255,.94));
-  border:1px solid rgba(255,255,255,.9);border-radius:36px;box-shadow:var(--shadow);padding:26px;
-}
-.kicker{display:inline-flex;gap:9px;align-items:center;padding:9px 13px;border-radius:999px;background:rgba(123,77,255,.09);color:var(--violet);font-weight:800;font-size:14px}
-h1{font-size:48px;letter-spacing:-.045em;line-height:1;margin:16px 0 12px}
-.astro{max-width:780px;margin:0 0 4px;padding:18px 20px;border-radius:24px;background:linear-gradient(135deg,rgba(123,77,255,.10),rgba(239,99,199,.08));border:1px solid rgba(255,255,255,.78);font-size:19px;line-height:1.42;color:#35406b;font-weight:650}
-.focus{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.focus-card{border-radius:24px;padding:17px;background:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.92);box-shadow:var(--shadow2)}
-.focus-card small{display:block;color:var(--soft);font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:12px}
-.focus-card strong{display:block;margin-top:8px;font-size:20px;line-height:1.18}
-.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.metric{border-radius:25px;padding:18px;min-height:136px;background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(255,255,255,.72));border:1px solid rgba(255,255,255,.94);box-shadow:var(--shadow2)}
-.metric .label{font-size:14px;color:var(--soft);font-weight:800}
-.metric .value{margin-top:12px;font-size:34px;font-weight:900;letter-spacing:-.045em;line-height:1.02}
-.metric .hint{margin-top:9px;color:var(--soft);font-size:14px;line-height:1.35}
-.tone-v{background:linear-gradient(160deg,rgba(123,77,255,.14),rgba(255,255,255,.9))}
-.tone-p{background:linear-gradient(160deg,rgba(239,99,199,.12),rgba(255,255,255,.9))}
-.tone-c{background:linear-gradient(160deg,rgba(74,199,255,.13),rgba(255,255,255,.9))}
-.tone-g{background:linear-gradient(160deg,rgba(79,224,194,.13),rgba(255,255,255,.9))}
-.section{margin-top:18px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.86);border-radius:30px;box-shadow:var(--shadow2);padding:21px;min-height:245px;position:relative;overflow:hidden;cursor:pointer}
-.card:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--violet),var(--pink),var(--cyan));opacity:.75}
-.card h2{font-size:23px;line-height:1.08;letter-spacing:-.03em;margin:5px 0 14px;display:flex;align-items:center;gap:9px}
-.status{display:inline-flex;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:900;background:rgba(25,181,144,.12);color:#0f8d72}
-.status.warn{background:rgba(255,189,89,.16);color:#b36b00}.status.pause{background:rgba(123,77,255,.10);color:var(--violet)}
-.row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid rgba(95,103,151,.12)}.row:last-child{border-bottom:0}
-.row .name{font-size:15px;font-weight:800}.row .desc{font-size:13px;color:var(--soft);margin-top:3px;line-height:1.3}.row .val{font-weight:900;white-space:nowrap;align-self:center}
-.progress{margin:13px 0 10px;height:16px;border-radius:999px;background:rgba(123,77,255,.09);overflow:hidden}.progress span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--pink))}
-.big{font-size:34px;line-height:1.02;font-weight:900;letter-spacing:-.04em;margin:10px 0 6px}.note{font-size:14px;line-height:1.42;color:var(--soft)}
-.wide{grid-column:span 2;cursor:default}.today{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.task{border-radius:22px;padding:15px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.72));border:1px solid rgba(255,255,255,.88);display:flex;gap:12px;align-items:flex-start}.dot{width:12px;height:12px;border-radius:50%;background:var(--violet);margin-top:5px;flex:0 0 auto}.task strong{display:block;font-size:17px}.task span{display:block;color:var(--soft);font-size:14px;margin-top:4px;line-height:1.35}
-.footer{padding:20px 0 8px;text-align:center;color:var(--soft);font-size:13px}.nav{position:relative;margin:22px auto 0;max-width:720px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(16px);box-shadow:var(--shadow2)}.nav button{border:0;border-radius:999px;padding:11px 8px;background:transparent;color:var(--soft);font-weight:800;cursor:pointer}.nav button.active,.nav button:hover{background:linear-gradient(135deg,var(--violet),var(--pink));color:white}
-.hidden-detail{display:none;margin-top:12px;border-radius:20px;padding:14px;background:rgba(123,77,255,.06);color:var(--soft);font-size:14px;line-height:1.4}.card.open .hidden-detail{display:block}
-@media(max-width:1180px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.wide{grid-column:span 2}.today{grid-template-columns:1fr}}
-@media(max-width:720px){.wrap{padding:12px}.hero{padding:18px;border-radius:26px}h1{font-size:34px}.focus,.quick,.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.nav{grid-template-columns:repeat(3,1fr);border-radius:24px}.metric .value,.big{font-size:30px}}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 24px}.hero{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(248,244,255,.94));border:1px solid rgba(255,255,255,.9);border-radius:34px;box-shadow:var(--shadow);padding:24px}.kicker{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(123,77,255,.09);color:var(--violet);font-size:13px;font-weight:850}h1{margin:14px 0 12px;font-size:44px;line-height:1;letter-spacing:-.045em}.phrase{padding:18px 20px;border-radius:24px;background:linear-gradient(135deg,rgba(123,77,255,.10),rgba(239,99,199,.08));border:1px solid rgba(255,255,255,.86);font-size:19px;line-height:1.42;color:#35406b;font-weight:650}.focus{margin-top:14px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px 18px;border-radius:24px;background:rgba(255,255,255,.74);border:1px solid rgba(255,255,255,.9)}.focus small{display:block;color:var(--soft);font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:850}.focus strong{display:block;margin-top:5px;font-size:23px;line-height:1.15}.pill{padding:10px 13px;border-radius:999px;background:linear-gradient(135deg,var(--violet),var(--pink));color:#fff;font-weight:850;white-space:nowrap}.grid{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{position:relative;overflow:hidden;min-height:205px;padding:20px;border-radius:28px;background:rgba(255,255,255,.91);border:1px solid rgba(255,255,255,.88);box-shadow:var(--shadow2)}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--violet),var(--pink),var(--cyan));opacity:.76}.card h2{margin:6px 0 14px;font-size:24px;letter-spacing:-.03em;line-height:1.08}.badge{display:inline-flex;margin-bottom:10px;padding:7px 10px;border-radius:999px;background:rgba(25,181,144,.12);color:#0f8d72;font-size:12px;font-weight:900}.badge.warn{background:rgba(255,189,89,.18);color:#a56500}.badge.soft{background:rgba(123,77,255,.10);color:var(--violet)}.big{font-size:34px;line-height:1.02;font-weight:950;letter-spacing:-.045em}.sub{margin-top:8px;color:var(--soft);font-size:14px;line-height:1.36}.row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid rgba(95,103,151,.12)}.row:last-child{border-bottom:0}.name{font-size:14px;font-weight:850}.desc{margin-top:3px;color:var(--soft);font-size:12px;line-height:1.28}.val{align-self:center;font-weight:950;white-space:nowrap}.progress{height:16px;margin:12px 0 10px;border-radius:999px;background:rgba(123,77,255,.09);overflow:hidden}.progress span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--cyan))}.wide{grid-column:span 2}.footer{text-align:center;color:var(--soft);font-size:13px;padding:20px 0 4px}.money{background:linear-gradient(160deg,rgba(123,77,255,.12),rgba(255,255,255,.92))}.health{background:linear-gradient(160deg,rgba(79,224,194,.12),rgba(255,255,255,.92))}.steps{background:linear-gradient(160deg,rgba(74,199,255,.13),rgba(255,255,255,.92))}.spanish{background:linear-gradient(160deg,rgba(239,99,199,.11),rgba(255,255,255,.92))}.gut{background:linear-gradient(160deg,rgba(255,189,89,.15),rgba(255,255,255,.92))}@media(max-width:920px){.grid{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}h1{font-size:38px}.focus{grid-template-columns:1fr}.pill{justify-self:start}}@media(max-width:620px){.wrap{padding:12px}.hero{padding:18px;border-radius:26px}h1{font-size:32px}.phrase{font-size:16px}.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.big{font-size:30px}.card{min-height:auto}.focus strong{font-size:20px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <section class="hero">
-    <div>
-      <div class="kicker">● 20 июля · день сборки</div>
-      <h1>Пульс Любови</h1>
-      <div class="astro">Сегодня день, когда важное лучше не тащить в голове, а разложить по местам. Твоя сила — в спокойном управлении, маленьких шагах и бережной точности.</div>
-      <div class="focus">
-        <div class="focus-card"><small>Фокус дня</small><strong>фото · семья · шаги</strong></div>
-        <div class="focus-card"><small>Настрой</small><strong>мягко, но по делу</strong></div>
-        <div class="focus-card"><small>Ближайший дедлайн</small><strong>21 июля · 16:00</strong></div>
-      </div>
-    </div>
-    <div class="quick">
-      <div class="metric tone-g"><div class="label">Шаги сегодня</div><div class="value">— / 10 000</div><div class="hint">Можно подключить вручную/экспортом, пока без автосинхронизации.</div></div>
-      <div class="metric tone-v"><div class="label">ЖКТ-контур</div><div class="value">курс</div><div class="hint">Меню, лекарства и бережный режим — без лишнего шума на главном экране.</div></div>
-      <div class="metric tone-p"><div class="label">Семья</div><div class="value">3 фокуса</div><div class="hint">Вова · Ангелина · золотая свадьба родителей.</div></div>
-      <div class="metric tone-c"><div class="label">Деньги сегодня</div><div class="value">9 779 ₽</div><div class="hint">Внесено в факт: подарок, продукты, кофе/кафе и Самокат.</div></div>
+    <div class="kicker">20 июля · пульс дня</div>
+    <h1>Пульс Любови</h1>
+    <div class="phrase">Сегодня не нужно тащить всё в голове. Сила дня — спокойно увидеть главное, сделать один точный шаг и вернуть себе ощущение управления.</div>
+    <div class="focus">
+      <div><small>Главный фокус дня</small><strong>деньги в факт · 10 000 шагов · без лишнего шума</strong></div>
+      <div class="pill">мягко, но по делу</div>
     </div>
   </section>
 
-  <section class="section grid" id="pulse">
-    <div class="card" onclick="this.classList.toggle('open')"><h2>💚 Здоровье</h2><span class="status warn">в ритме</span><div class="big">10 000 шагов</div><div class="note">Цель дня. Вечером — мягкая проверка, без давления.</div><div class="progress"><span style="width:38%"></span></div><div class="hidden-detail">Дальше можно подключить источник: Apple Health / Google Fit / приложение с экспортом / скрин.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>🍽️ ЖКТ</h2><span class="status pause">контур</span><div class="big">меню · режим</div><div class="note">Бережный блок питания и лекарств появляется тогда, когда нужен.</div><div class="hidden-detail">Внутри: завтрак, обед, ужин, правила без перекусов, вода, замены внутри категорий.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>💸 Финансы</h2><span class="status">обновлено</span><div class="row"><div><div class="name">Расходы 20 июля</div><div class="desc">подарок, продукты, кофе/кафе, Самокат</div></div><div class="val">9 779 ₽</div></div><div class="row"><div><div class="name">Остаток факт в банке</div><div class="desc">по выписке Альфа на 20.07</div></div><div class="val">10 844 ₽</div></div><div class="row"><div><div class="name">Ближайший платёж</div><div class="desc">Сбербанк до 27 числа</div></div><div class="val">26.07</div></div><div class="hidden-detail">В таблице колонка F — плановый остаток с учётом строки “долг ЦИВИЛИСТЫ 12 427”, а колонка G — фактический банковский остаток. По выписке за 20.07 поступлений в банк не было, поэтому факт = 10 844,43 ₽.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>👨‍👩‍👧‍👦 Семья</h2><span class="status">под рукой</span><div class="row"><div><div class="name">Вова</div><div class="desc">поступление и вузы</div></div><div class="val">контроль</div></div><div class="row"><div><div class="name">Ангелина</div><div class="desc">здоровье, школа, задачи</div></div><div class="val">рядом</div></div><div class="row"><div><div class="name">Родители</div><div class="desc">золотая свадьба</div></div><div class="val">23.09</div></div><div class="hidden-detail">Семейный блок собирает важное по близким: Вова, Ангелина, родители, подарки, события, документы и следующие шаги.</div></div>
+  <section class="grid">
+    <article class="card money wide">
+      <h2>💸 Финансовая картина</h2>
+      <div class="row"><div><div class="name">Остаток факт в банке</div><div class="desc">по выписке Альфа на 20.07</div></div><div class="val">10 844 ₽</div></div>
+      <div class="row"><div><div class="name">Расходы 20 июля</div><div class="desc">подарок, продукты, кофе/кафе, Самокат</div></div><div class="val">9 779 ₽</div></div>
+      <div class="row"><div><div class="name">Ближайший платёж</div><div class="desc">Сбербанк до 27 числа</div></div><div class="val">26.07</div></div>
+    </article>
 
-    <div class="card wide"><h2>✨ Сегодня / ближайшие шаги</h2><div class="today"><div class="task"><div class="dot"></div><div><strong>Фотографии</strong><span>До конца дня проверить, вышли ли фото. Если нет — пингнуть ответственного.</span></div></div><div class="task"><div class="dot" style="background:var(--pink)"></div><div><strong>Семья</strong><span>Вова — поступление; Ангелина — здоровье/задачи; родители — подготовка 50-летия.</span></div></div><div class="task"><div class="dot" style="background:var(--gold)"></div><div><strong>Тело</strong><span>Добрать движение спокойно: шаги, вода, без давления на себя.</span></div></div></div></div>
+    <article class="card steps">
+      <h2>🚶‍♀️ Шаги</h2>
+      <span class="badge warn">72% цели</span>
+      <div class="big">7 202 / 10 000</div>
+      <div class="progress"><span style="width:72%"></span></div>
+      <div class="sub">Осталось 2 798 шагов — примерно 25–35 минут спокойной прогулки.</div>
+    </article>
 
-    <div class="card" onclick="this.classList.toggle('open')"><h2>💛 Золотая свадьба</h2><span class="status warn">дедлайн</span><div class="big">21.07 · 16:00</div><div class="note">Концепция: “50 лет одной истории”. Город: Новосибирск. Гостей: ~40.</div><div class="hidden-detail">Сюрпризы внутри: ожившие фото родителей, дерево пожеланий, видео близких, музыка молодости.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>🧳 Travel</h2><span class="status">радар</span><div class="big">море · тепло</div><div class="note">Отслеживаются подходящие предложения из Сибири.</div><div class="hidden-detail">Фокус: безвиз/простые направления, лето, море/океан, без рекламного шума.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>👗 Гардероб</h2><span class="status pause">новый контур</span><div class="big">100 000 ₽</div><div class="note">Цель: стильно, дорого, расслабленно — без случайных вещей.</div><div class="hidden-detail">Капсулы: кафе/прогулки, переговоры, спорт/бассейн, дом.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>🌿 Promo‑S</h2><span class="status">фокус</span><div class="big">Projects + Ecosystems</div><div class="note">Коммерческое ядро архитектуры живых сред.</div><div class="hidden-detail">Projects — event/промо/логистика. Ecosystems — B2B-сообщества и среды.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>📬 Почта</h2><span class="status warn">ручной остаток</span><div class="big">642</div><div class="note">Mail.ru очищена до ручного остатка. Gmail — утренний разбор.</div><div class="hidden-detail">В будущем здесь можно показывать только “есть важное / нет важного”, без писем на публичной странице.</div></div>
-    <div class="card" onclick="this.classList.toggle('open')"><h2>📚 Испанский</h2><span class="status">15 минут</span><div class="big">travel</div><div class="note">Короткая разговорная практика для поездок.</div><div class="hidden-detail">Главное правило: не больше одного урока в день.</div></div>
+    <article class="card health">
+      <h2>💚 Здоровье</h2>
+      <span class="badge">бережный режим</span>
+      <div class="big">без давления</div>
+      <div class="sub">Сегодня задача не героизм, а поддержать тело: вода, движение, нормальная еда, паузы.</div>
+    </article>
+
+    <article class="card gut">
+      <h2>🍽️ ЖКТ</h2>
+      <span class="badge soft">контур</span>
+      <div class="big">меню · режим</div>
+      <div class="sub">Держим как отдельный блок: питание, лекарства и замены — только когда это актуально.</div>
+    </article>
+
+    <article class="card spanish">
+      <h2>🇪🇸 Испанский</h2>
+      <span class="badge soft">15 минут</span>
+      <div class="big">travel</div>
+      <div class="sub">Короткая разговорная практика для поездок. Если урок уже был — не дублировать.</div>
+    </article>
   </section>
 
-  <div class="nav">
-    <button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})">Пульс</button>
-    <button onclick="alert('В макете: здесь будет переход к финансам')">Деньги</button>
-    <button onclick="alert('В макете: здесь будет здоровье')">Здоровье</button>
-    <button onclick="alert('В макете: здесь будет семья')">Семья</button>
-    <button onclick="alert('В макете: здесь будут проекты')">Проекты</button>
-  </div>
-  <div class="footer">Макет · Пульс Любови</div>
+  <div class="footer">Пульс Любови · короткий дашборд без лишних контуров</div>
 </div>
-<script>
-document.querySelectorAll('.card').forEach(card=>{card.title='Нажми, чтобы раскрыть детали';});
-</script>
 </body>
 </html>
