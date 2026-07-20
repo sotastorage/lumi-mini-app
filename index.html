@@ -1,559 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Финансовый дашборд</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Пульс Любови — макет</title>
 <style>
 :root{
-  --bg1:#f8f5ff;
-  --bg2:#eef7ff;
-  --panel:rgba(255,255,255,.72);
-  --panel-strong:rgba(255,255,255,.9);
-  --line:rgba(143,123,255,.18);
-  --text:#1f2850;
-  --text-soft:#5e6797;
-  --violet:#7b4dff;
-  --violet2:#a35cff;
-  --pink:#ef63c7;
-  --cyan:#4ac7ff;
-  --teal:#4fe0c2;
-  --orange:#ffb24d;
-  --red:#ff6b7c;
-  --shadow:0 18px 42px rgba(109,85,197,.13);
-  --shadow-soft:0 10px 24px rgba(109,85,197,.10);
-  --radius:28px;
+  --bg1:#faf7ff; --bg2:#eef8ff; --ink:#1f2850; --soft:#687197;
+  --violet:#7b4dff; --pink:#ef63c7; --cyan:#4ac7ff; --teal:#4fe0c2;
+  --gold:#ffbd59; --red:#ff6b7c; --green:#19b590;
+  --shadow:0 20px 52px rgba(82,66,168,.14);
+  --shadow2:0 12px 30px rgba(82,66,168,.10);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
   background:
-    radial-gradient(circle at 15% 20%, rgba(123,77,255,.16), transparent 28%),
-    radial-gradient(circle at 88% 14%, rgba(239,99,199,.18), transparent 28%),
-    radial-gradient(circle at 12% 92%, rgba(74,199,255,.16), transparent 26%),
-    radial-gradient(circle at 88% 84%, rgba(79,224,194,.14), transparent 24%),
-    linear-gradient(145deg, var(--bg1), var(--bg2));
+    radial-gradient(circle at 12% 14%,rgba(123,77,255,.18),transparent 28%),
+    radial-gradient(circle at 88% 8%,rgba(239,99,199,.16),transparent 26%),
+    radial-gradient(circle at 10% 90%,rgba(74,199,255,.15),transparent 24%),
+    linear-gradient(145deg,var(--bg1),var(--bg2));
+  min-height:100vh;
 }
-.wrap{max-width:1400px;margin:0 auto;padding:22px}
-.top{
-  background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,244,255,.96));
-  border:1px solid rgba(255,255,255,.9);
-  border-radius:34px;
-  box-shadow:var(--shadow);
-  padding:26px;
-  display:grid;
-  grid-template-columns:1.25fr .95fr;
-  gap:18px;
+.wrap{max-width:1420px;margin:0 auto;padding:22px}
+.hero{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(248,244,255,.94));
+  border:1px solid rgba(255,255,255,.9);border-radius:36px;box-shadow:var(--shadow);padding:26px;
 }
-h1{
-  margin:8px 0 10px;
-  font-size:44px;
-  line-height:1.05;
-  letter-spacing:-.03em;
-}
-.quick{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-.badge-card{
-  border-radius:24px;
-  padding:18px;
-  min-height:132px;
-  box-shadow:var(--shadow-soft);
-  color:#1f2850;
-  background:
-    linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
-  border:1px solid rgba(255,255,255,.86);
-}
-.badge-card .label{
-  font-size:14px;
-  color:var(--text-soft);
-  font-weight:700;
-}
-.badge-card .value{
-  margin-top:12px;
-  font-size:34px;
-  line-height:1.05;
-  font-weight:800;
-  letter-spacing:-.04em;
-}
-.badge-card .hint{
-  margin-top:10px;
-  font-size:15px;
-  color:var(--text-soft);
-  line-height:1.4;
-}
-.card{
-  background:rgba(255,255,255,.91);
-  border:1px solid rgba(255,255,255,.82);
-  border-radius:30px;
-  box-shadow:var(--shadow-soft);
-  padding:22px;
-}
-.section{
-  margin-top:18px;
-}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
-.card h2{
-  margin:0 0 16px;
-  font-size:28px;
-  line-height:1.1;
-  letter-spacing:-.03em;
-}
-.kpi{
-  border-radius:24px;
-  padding:18px;
-  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.76));
-  border:1px solid rgba(255,255,255,.92);
-  box-shadow:0 10px 28px rgba(108,90,190,.08);
-  min-height:150px;
-}
-.kpi .eyebrow{
-  font-size:13px;
-  color:var(--text-soft);
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-}
-.kpi .num{
-  margin-top:10px;
-  font-size:36px;
-  line-height:1.04;
-  font-weight:800;
-  letter-spacing:-.04em;
-}
-.kpi .sub{
-  margin-top:10px;
-  font-size:15px;
-  color:var(--text-soft);
-  line-height:1.35;
-}
-.ton-violet{background:linear-gradient(160deg, rgba(123,77,255,.14), rgba(255,255,255,.92))}
-.ton-pink{background:linear-gradient(160deg, rgba(239,99,199,.12), rgba(255,255,255,.92))}
-.ton-cyan{background:linear-gradient(160deg, rgba(74,199,255,.13), rgba(255,255,255,.92))}
-.ton-teal{background:linear-gradient(160deg, rgba(79,224,194,.13), rgba(255,255,255,.92))}
-.ton-orange{background:linear-gradient(160deg, rgba(255,178,77,.15), rgba(255,255,255,.92))}
-.ton-red{background:linear-gradient(160deg, rgba(255,107,124,.14), rgba(255,255,255,.92))}
-.bar-set{display:grid;gap:16px}
-.bar-row{
-  display:grid;
-  grid-template-columns:160px 1fr 122px;
-  gap:14px;
-  align-items:center;
-}
-.bar-label{font-size:17px;font-weight:700}
-.bar-track{
-  height:22px;
-  background:rgba(123,77,255,.08);
-  border-radius:999px;
-  overflow:hidden;
-  position:relative;
-}
-.bar-fill{
-  height:100%;
-  border-radius:999px;
-}
-.bar-value{
-  font-size:17px;
-  font-weight:800;
-  text-align:right;
-}
-.list{
-  display:grid;
-  gap:12px;
-}
-.item{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:16px;
-  padding:14px 0;
-  border-bottom:1px solid rgba(95,103,151,.14);
-}
-.item:last-child{border-bottom:0;padding-bottom:0}
-.item .name{
-  font-size:18px;
-  font-weight:700;
-}
-.item .desc{
-  margin-top:4px;
-  color:var(--text-soft);
-  font-size:15px;
-  line-height:1.35;
-}
-.item .val{
-  font-size:20px;
-  font-weight:800;
-  text-align:right;
-  align-self:center;
-}
-.debts{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-.debt{
-  border-radius:26px;
-  padding:20px;
-  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.78));
-  border:1px solid rgba(255,255,255,.92);
-}
-.debt small{
-  display:block;
-  color:var(--text-soft);
-  font-size:15px;
-  font-weight:700;
-}
-.debt .big{
-  margin:10px 0 6px;
-  font-size:40px;
-  line-height:1.02;
-  font-weight:800;
-  letter-spacing:-.04em;
-}
-.debt .pay{
-  font-size:18px;
-  color:var(--text-soft);
-}
-.mini-track{
-  height:16px;
-  border-radius:999px;
-  background:rgba(123,77,255,.08);
-  overflow:hidden;
-  margin:16px 0 10px;
-}
-.mini-track span{display:block;height:100%;border-radius:999px}
-.months{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:14px;
-}
-.month{
-  border-radius:22px;
-  padding:18px;
-  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.78));
-  border:1px solid rgba(255,255,255,.92);
-  min-height:132px;
-}
-.month .m{
-  font-size:15px;
-  color:var(--text-soft);
-  font-weight:700;
-}
-.month .v{
-  margin-top:10px;
-  font-size:30px;
-  line-height:1.06;
-  font-weight:800;
-  letter-spacing:-.04em;
-}
-.month .state{
-  margin-top:10px;
-  font-size:14px;
-  font-weight:700;
-}
-.table-wrap{
-  overflow:auto;
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,.9);
-  background:rgba(255,255,255,.74);
-}
-table{
-  width:100%;
-  min-width:960px;
-  border-collapse:collapse;
-}
-th{
-  text-align:left;
-  padding:15px 16px;
-  font-size:14px;
-  color:var(--text-soft);
-  background:rgba(255,255,255,.94);
-  position:sticky;
-  top:0;
-  z-index:1;
-}
-td{
-  padding:15px 16px;
-  font-size:15px;
-  border-top:1px solid rgba(95,103,151,.12);
-  vertical-align:top;
-}
-tbody tr:nth-child(even){background:rgba(255,255,255,.35)}
-.money{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:800}
-.pos{color:#0f8d72}
-.neg{color:#df5870}
-.actions{
-  display:grid;
-  gap:12px;
-}
-.action{
-  border-radius:22px;
-  padding:18px 18px 18px 20px;
-  background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.78));
-  border:1px solid rgba(255,255,255,.92);
-  font-size:18px;
-  line-height:1.42;
-}
-.action strong{display:block;margin-bottom:6px;font-size:20px}
-.footer{
-  text-align:center;
-  padding:22px 0 12px;
-  color:var(--text-soft);
-  font-size:14px;
-}
-@media (max-width:1200px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .months{grid-template-columns:repeat(3,1fr)}
-  .top{grid-template-columns:1fr}
-}
-@media (max-width:820px){
-  .wrap{padding:12px}
-  .top{padding:18px;border-radius:24px}
-  h1{font-size:36px}
-  .quick{grid-template-columns:1fr 1fr}
-  .grid-4,.grid-3,.grid-2,.debts{grid-template-columns:1fr}
-  .months{grid-template-columns:1fr 1fr}
-  .kpi .num{font-size:36px}
-  .bar-row{grid-template-columns:120px 1fr 100px}
-  .bar-label,.bar-value{font-size:15px}
-  .card h2{font-size:24px}
-  .item .name{font-size:17px}
-  .item .val{font-size:18px}
-  td,th{font-size:14px}
-}
-@media (max-width:540px){
-  .quick{grid-template-columns:1fr}
-  .grid-4{grid-template-columns:1fr}
-  .months{grid-template-columns:1fr}
-  .bar-row{grid-template-columns:1fr;gap:6px}
-  .bar-value{text-align:left}
-  h1{font-size:30px}
-  .badge-card .value{font-size:31px}
-  .kpi .num{font-size:31px}
-  .debt .big{font-size:35px}
-  .month .v{font-size:28px}
-}
-@media print{
-  body{background:#fff}
-  .wrap{max-width:none;padding:0}
-  .top,.card,.kpi,.debt,.month,.badge-card{box-shadow:none}
-}
+.kicker{display:inline-flex;gap:9px;align-items:center;padding:9px 13px;border-radius:999px;background:rgba(123,77,255,.09);color:var(--violet);font-weight:800;font-size:14px}
+h1{font-size:48px;letter-spacing:-.045em;line-height:1;margin:16px 0 12px}
+.astro{max-width:780px;margin:0 0 4px;padding:18px 20px;border-radius:24px;background:linear-gradient(135deg,rgba(123,77,255,.10),rgba(239,99,199,.08));border:1px solid rgba(255,255,255,.78);font-size:19px;line-height:1.42;color:#35406b;font-weight:650}
+.focus{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.focus-card{border-radius:24px;padding:17px;background:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.92);box-shadow:var(--shadow2)}
+.focus-card small{display:block;color:var(--soft);font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:12px}
+.focus-card strong{display:block;margin-top:8px;font-size:20px;line-height:1.18}
+.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.metric{border-radius:25px;padding:18px;min-height:136px;background:linear-gradient(160deg,rgba(255,255,255,.96),rgba(255,255,255,.72));border:1px solid rgba(255,255,255,.94);box-shadow:var(--shadow2)}
+.metric .label{font-size:14px;color:var(--soft);font-weight:800}
+.metric .value{margin-top:12px;font-size:34px;font-weight:900;letter-spacing:-.045em;line-height:1.02}
+.metric .hint{margin-top:9px;color:var(--soft);font-size:14px;line-height:1.35}
+.tone-v{background:linear-gradient(160deg,rgba(123,77,255,.14),rgba(255,255,255,.9))}
+.tone-p{background:linear-gradient(160deg,rgba(239,99,199,.12),rgba(255,255,255,.9))}
+.tone-c{background:linear-gradient(160deg,rgba(74,199,255,.13),rgba(255,255,255,.9))}
+.tone-g{background:linear-gradient(160deg,rgba(79,224,194,.13),rgba(255,255,255,.9))}
+.section{margin-top:18px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.86);border-radius:30px;box-shadow:var(--shadow2);padding:21px;min-height:245px;position:relative;overflow:hidden;cursor:pointer}
+.card:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--violet),var(--pink),var(--cyan));opacity:.75}
+.card h2{font-size:23px;line-height:1.08;letter-spacing:-.03em;margin:5px 0 14px;display:flex;align-items:center;gap:9px}
+.status{display:inline-flex;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:900;background:rgba(25,181,144,.12);color:#0f8d72}
+.status.warn{background:rgba(255,189,89,.16);color:#b36b00}.status.pause{background:rgba(123,77,255,.10);color:var(--violet)}
+.row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid rgba(95,103,151,.12)}.row:last-child{border-bottom:0}
+.row .name{font-size:15px;font-weight:800}.row .desc{font-size:13px;color:var(--soft);margin-top:3px;line-height:1.3}.row .val{font-weight:900;white-space:nowrap;align-self:center}
+.progress{margin:13px 0 10px;height:16px;border-radius:999px;background:rgba(123,77,255,.09);overflow:hidden}.progress span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--pink))}
+.big{font-size:34px;line-height:1.02;font-weight:900;letter-spacing:-.04em;margin:10px 0 6px}.note{font-size:14px;line-height:1.42;color:var(--soft)}
+.wide{grid-column:span 2;cursor:default}.today{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.task{border-radius:22px;padding:15px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.72));border:1px solid rgba(255,255,255,.88);display:flex;gap:12px;align-items:flex-start}.dot{width:12px;height:12px;border-radius:50%;background:var(--violet);margin-top:5px;flex:0 0 auto}.task strong{display:block;font-size:17px}.task span{display:block;color:var(--soft);font-size:14px;margin-top:4px;line-height:1.35}
+.footer{padding:20px 0 8px;text-align:center;color:var(--soft);font-size:13px}.nav{position:relative;margin:22px auto 0;max-width:720px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(16px);box-shadow:var(--shadow2)}.nav button{border:0;border-radius:999px;padding:11px 8px;background:transparent;color:var(--soft);font-weight:800;cursor:pointer}.nav button.active,.nav button:hover{background:linear-gradient(135deg,var(--violet),var(--pink));color:white}
+.hidden-detail{display:none;margin-top:12px;border-radius:20px;padding:14px;background:rgba(123,77,255,.06);color:var(--soft);font-size:14px;line-height:1.4}.card.open .hidden-detail{display:block}
+@media(max-width:1180px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.wide{grid-column:span 2}.today{grid-template-columns:1fr}}
+@media(max-width:720px){.wrap{padding:12px}.hero{padding:18px;border-radius:26px}h1{font-size:34px}.focus,.quick,.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.nav{grid-template-columns:repeat(3,1fr);border-radius:24px}.metric .value,.big{font-size:30px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <section class="top">
+  <section class="hero">
     <div>
-      <h1 style="margin-top:8px">Финансовая ситуация сейчас</h1>
+      <div class="kicker">● 20 июля · день сборки</div>
+      <h1>Пульс Любови</h1>
+      <div class="astro">Сегодня день, когда важное лучше не тащить в голове, а разложить по местам. Твоя сила — в спокойном управлении, маленьких шагах и бережной точности.</div>
+      <div class="focus">
+        <div class="focus-card"><small>Фокус дня</small><strong>фото · семья · шаги</strong></div>
+        <div class="focus-card"><small>Настрой</small><strong>мягко, но по делу</strong></div>
+        <div class="focus-card"><small>Ближайший дедлайн</small><strong>21 июля · 16:00</strong></div>
+      </div>
     </div>
     <div class="quick">
-      <div class="badge-card ton-violet">
-        <div class="label">Остаток на 19 июля</div>
-        <div class="value">29 449,18 ₽</div>
-        <div class="hint">Текущие доступные деньги</div>
-      </div>
-      <div class="badge-card ton-pink">
-        <div class="label">Заработано в июле</div>
-        <div class="value">268 350 ₽</div>
-        <div class="hint">Без займов и возвратов</div>
-      </div>
-      <div class="badge-card ton-cyan">
-        <div class="label">Расходы июля</div>
-        <div class="value">367 393,82 ₽</div>
-        <div class="hint">Все списания по 18 июля</div>
-      </div>
-      <div class="badge-card ton-orange">
-        <div class="label">Общий долг</div>
-        <div class="value">4 905 012 ₽</div>
-        <div class="hint">Ипотека + Сбербанк</div>
-      </div>
+      <div class="metric tone-g"><div class="label">Шаги сегодня</div><div class="value">— / 10 000</div><div class="hint">Можно подключить вручную/экспортом, пока без автосинхронизации.</div></div>
+      <div class="metric tone-v"><div class="label">ЖКТ-контур</div><div class="value">курс</div><div class="hint">Меню, лекарства и бережный режим — без лишнего шума на главном экране.</div></div>
+      <div class="metric tone-p"><div class="label">Семья</div><div class="value">3 фокуса</div><div class="hint">Вова · Ангелина · золотая свадьба родителей.</div></div>
+      <div class="metric tone-c"><div class="label">Деньги сегодня</div><div class="value">9 779 ₽</div><div class="hint">Внесено в факт: подарок, продукты, кофе/кафе и Самокат.</div></div>
     </div>
   </section>
 
-  <section class="section grid-4">
-    <div class="kpi ton-violet">
-      <div class="eyebrow">Все поступления</div>
-      <div class="num">374 350 ₽</div>
-      <div class="sub">Включают доход, возвраты и займы</div>
-    </div>
-    <div class="kpi ton-pink">
-      <div class="eyebrow">Чистый поток июля</div>
-      <div class="num">6 956,18 ₽</div>
-      <div class="sub">Поступления минус расходы</div>
-    </div>
-    <div class="kpi ton-cyan">
-      <div class="eyebrow">Кредиты в месяц</div>
-      <div class="num">52 100 ₽</div>
-      <div class="sub">35 400 ₽ ипотека + 16 700 ₽ Сбербанк</div>
-    </div>
-    <div class="kpi ton-red">
-      <div class="eyebrow">Долговая нагрузка</div>
-      <div class="num">19,4%</div>
-      <div class="sub">Платежи / заработанный доход июля</div>
-    </div>
+  <section class="section grid" id="pulse">
+    <div class="card" onclick="this.classList.toggle('open')"><h2>💚 Здоровье</h2><span class="status warn">в ритме</span><div class="big">10 000 шагов</div><div class="note">Цель дня. Вечером — мягкая проверка, без давления.</div><div class="progress"><span style="width:38%"></span></div><div class="hidden-detail">Дальше можно подключить источник: Apple Health / Google Fit / приложение с экспортом / скрин.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>🍽️ ЖКТ</h2><span class="status pause">контур</span><div class="big">меню · режим</div><div class="note">Бережный блок питания и лекарств появляется тогда, когда нужен.</div><div class="hidden-detail">Внутри: завтрак, обед, ужин, правила без перекусов, вода, замены внутри категорий.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>💸 Финансы</h2><span class="status">обновлено</span><div class="row"><div><div class="name">Расходы 20 июля</div><div class="desc">подарок, продукты, кофе/кафе, Самокат</div></div><div class="val">9 779 ₽</div></div><div class="row"><div><div class="name">Остаток факт</div><div class="desc">после внесения выписки</div></div><div class="val">21 544 ₽</div></div><div class="row"><div><div class="name">Ближайший платёж</div><div class="desc">Сбербанк до 27 числа</div></div><div class="val">26.07</div></div><div class="hidden-detail">В Google Sheets строка 20.7 обновлена: SOKOLOV 7000 уже был учтён как подарок, остальные операции добавлены в эту же строку без дубля.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>👨‍👩‍👧‍👦 Семья</h2><span class="status">под рукой</span><div class="row"><div><div class="name">Вова</div><div class="desc">поступление и вузы</div></div><div class="val">контроль</div></div><div class="row"><div><div class="name">Ангелина</div><div class="desc">здоровье, школа, задачи</div></div><div class="val">рядом</div></div><div class="row"><div><div class="name">Родители</div><div class="desc">золотая свадьба</div></div><div class="val">23.09</div></div><div class="hidden-detail">Семейный блок собирает важное по близким: Вова, Ангелина, родители, подарки, события, документы и следующие шаги.</div></div>
+
+    <div class="card wide"><h2>✨ Сегодня / ближайшие шаги</h2><div class="today"><div class="task"><div class="dot"></div><div><strong>Фотографии</strong><span>До конца дня проверить, вышли ли фото. Если нет — пингнуть ответственного.</span></div></div><div class="task"><div class="dot" style="background:var(--pink)"></div><div><strong>Семья</strong><span>Вова — поступление; Ангелина — здоровье/задачи; родители — подготовка 50-летия.</span></div></div><div class="task"><div class="dot" style="background:var(--gold)"></div><div><strong>Тело</strong><span>Добрать движение спокойно: шаги, вода, без давления на себя.</span></div></div></div></div>
+
+    <div class="card" onclick="this.classList.toggle('open')"><h2>💛 Золотая свадьба</h2><span class="status warn">дедлайн</span><div class="big">21.07 · 16:00</div><div class="note">Концепция: “50 лет одной истории”. Город: Новосибирск. Гостей: ~40.</div><div class="hidden-detail">Сюрпризы внутри: ожившие фото родителей, дерево пожеланий, видео близких, музыка молодости.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>🧳 Travel</h2><span class="status">радар</span><div class="big">море · тепло</div><div class="note">Отслеживаются подходящие предложения из Сибири.</div><div class="hidden-detail">Фокус: безвиз/простые направления, лето, море/океан, без рекламного шума.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>👗 Гардероб</h2><span class="status pause">новый контур</span><div class="big">100 000 ₽</div><div class="note">Цель: стильно, дорого, расслабленно — без случайных вещей.</div><div class="hidden-detail">Капсулы: кафе/прогулки, переговоры, спорт/бассейн, дом.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>🌿 Promo‑S</h2><span class="status">фокус</span><div class="big">Projects + Ecosystems</div><div class="note">Коммерческое ядро архитектуры живых сред.</div><div class="hidden-detail">Projects — event/промо/логистика. Ecosystems — B2B-сообщества и среды.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>📬 Почта</h2><span class="status warn">ручной остаток</span><div class="big">642</div><div class="note">Mail.ru очищена до ручного остатка. Gmail — утренний разбор.</div><div class="hidden-detail">В будущем здесь можно показывать только “есть важное / нет важного”, без писем на публичной странице.</div></div>
+    <div class="card" onclick="this.classList.toggle('open')"><h2>📚 Испанский</h2><span class="status">15 минут</span><div class="big">travel</div><div class="note">Короткая разговорная практика для поездок.</div><div class="hidden-detail">Главное правило: не больше одного урока в день.</div></div>
   </section>
 
-  <section class="section grid-2">
-    <div class="card">
-      <h2>Качество поступлений</h2>
-      <div class="bar-set">
-        <div class="bar-row">
-          <div class="bar-label">Заработано</div>
-          <div class="bar-track"><div class="bar-fill" style="width:71.7%;background:linear-gradient(90deg,var(--violet),var(--pink))"></div></div>
-          <div class="bar-value">268 350 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Возвраты</div>
-          <div class="bar-track"><div class="bar-fill" style="width:12.3%;background:linear-gradient(90deg,var(--cyan),var(--teal))"></div></div>
-          <div class="bar-value">46 000 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Займы</div>
-          <div class="bar-track"><div class="bar-fill" style="width:16%;background:linear-gradient(90deg,var(--orange),#ffd36d)"></div></div>
-          <div class="bar-value">60 000 ₽</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Заработанный доход</h2>
-      <div class="list">
-        <div class="item"><div><div class="name">Зарплата — стенд</div><div class="desc">10 июля</div></div><div class="val">70 000 ₽</div></div>
-        <div class="item"><div><div class="name">TotalLook</div><div class="desc">13 июля</div></div><div class="val">75 000 ₽</div></div>
-        <div class="item"><div><div class="name">ЛУКОЙЛ</div><div class="desc">13 июля</div></div><div class="val">34 450 ₽</div></div>
-        <div class="item"><div><div class="name">Аренда</div><div class="desc">13 июля</div></div><div class="val">69 000 ₽</div></div>
-        <div class="item"><div><div class="name">Промоутер и хелпер</div><div class="desc">13 июля</div></div><div class="val">19 900 ₽</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section grid-2">
-    <div class="card">
-      <h2>Структура расходов</h2>
-      <div class="bar-set">
-        <div class="bar-row">
-          <div class="bar-label">Жизнь и дом</div>
-          <div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--violet2),var(--pink))"></div></div>
-          <div class="bar-value">168 201 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Обязательные</div>
-          <div class="bar-track"><div class="bar-fill" style="width:58.9%;background:linear-gradient(90deg,var(--orange),#ffd36d)"></div></div>
-          <div class="bar-value">99 139,82 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Возврат долга</div>
-          <div class="bar-track"><div class="bar-fill" style="width:29.7%;background:linear-gradient(90deg,var(--red),#ff92a0)"></div></div>
-          <div class="bar-value">50 000 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Семья и здоровье</div>
-          <div class="bar-track"><div class="bar-fill" style="width:15.2%;background:linear-gradient(90deg,var(--cyan),var(--teal))"></div></div>
-          <div class="bar-value">25 626 ₽</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">В долг проектам</div>
-          <div class="bar-track"><div class="bar-fill" style="width:14.5%;background:linear-gradient(90deg,#6c8cff,#7bd7ff)"></div></div>
-          <div class="bar-value">24 427 ₽</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Быстрые выводы</h2>
-      <div class="actions">
-        <div class="action"><strong>Обязательный фонд занижен.</strong>Во вкладке «Факт» цель — 56 800 ₽, а фактические обязательные платежи июля уже 99 139,82 ₽.</div>
-        <div class="action"><strong>Разовые траты сильно искажают месяц.</strong>Шторы, карнизы и навеска — 127 750 ₽, это не обычный ежемесячный расход.</div>
-        <div class="action"><strong>24 427 ₽ находятся в проектах.</strong>Их нужно возвращать отдельно, а не считать стоимостью жизни.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section card">
-    <h2>Личные фонды</h2>
-    <div class="grid-4">
-      <div class="kpi ton-violet"><div class="eyebrow">Капитал</div><div class="num">30 000 ₽</div><div class="sub">Создание личного капитала</div></div>
-      <div class="kpi ton-cyan"><div class="eyebrow">Обязательные</div><div class="num">56 800 ₽</div><div class="sub">Ипотека, Сбербанк, коммунальные</div></div>
-      <div class="kpi ton-pink"><div class="eyebrow">Жизнь</div><div class="num">55 000 ₽</div><div class="sub">Продукты, медицина, бассейн, карманные</div></div>
-      <div class="kpi ton-orange"><div class="eyebrow">Я</div><div class="num">25 000 ₽</div><div class="sub">Личные деньги Любови</div></div>
-      <div class="kpi ton-teal"><div class="eyebrow">Буфер</div><div class="num">12 000 ₽</div><div class="sub">Непредвиденные расходы</div></div>
-      <div class="kpi ton-cyan"><div class="eyebrow">Семья</div><div class="num">15 000 ₽</div><div class="sub">Семейный фонд</div></div>
-      <div class="kpi ton-violet"><div class="eyebrow">Стабильность</div><div class="num">10 000 ₽</div><div class="sub">Чтобы не приходилось занимать</div></div>
-      <div class="kpi ton-pink"><div class="eyebrow">Управление</div><div class="num">20 000 ₽</div><div class="sub">Досрочное погашение или крупная цель</div></div>
-    </div>
-  </section>
-
-  <section class="section card">
-    <h2>Кредиты</h2>
-    <div class="debts">
-      <div class="debt">
-        <small>Сбербанк</small>
-        <div class="big">354 712 ₽</div>
-        <div class="pay">Платёж: 16 700 ₽ в месяц</div>
-        <div class="mini-track"><span style="width:7.2%;background:linear-gradient(90deg,var(--orange),#ffd36d)"></span></div>
-        <div class="desc">7,2% общего долга. Первый кандидат на досрочное закрытие.</div>
-      </div>
-      <div class="debt">
-        <small>Ипотека</small>
-        <div class="big">4 550 300 ₽</div>
-        <div class="pay">Платёж: 35 400 ₽ в месяц</div>
-        <div class="mini-track"><span style="width:92.8%;background:linear-gradient(90deg,var(--violet),var(--pink))"></span></div>
-        <div class="desc">92,8% общего долга. Ускорять после закрытия Сбербанка.</div>
-      </div>
-    </div>
-    <div class="grid-3 section">
-      <div class="kpi ton-orange"><div class="eyebrow">Общий долг</div><div class="num">4 905 012 ₽</div><div class="sub">Сбербанк + ипотека</div></div>
-      <div class="kpi ton-red"><div class="eyebrow">Платежи / месяц</div><div class="num">52 100 ₽</div><div class="sub">Обязательная долговая нагрузка</div></div>
-      <div class="kpi ton-teal"><div class="eyebrow">Стратегия</div><div class="num" style="font-size:30px">Сбер → ипотека</div><div class="sub">Последовательность погашения</div></div>
-    </div>
-  </section>
-
-  <section class="section card">
-    <h2>Прогноз по уже внесённым строкам</h2>
-    <div class="months">
-      <div class="month"><div class="m">31 июля</div><div class="v">141 731,18 ₽</div><div class="state" style="color:#0f8d72">Запас есть</div></div>
-      <div class="month"><div class="m">31 августа</div><div class="v">4 531,18 ₽</div><div class="state" style="color:#dd8c2d">Очень тонко</div></div>
-      <div class="month"><div class="m">30 сентября</div><div class="v">23 731,18 ₽</div><div class="state" style="color:#dd8c2d">Тонкий остаток</div></div>
-      <div class="month"><div class="m">31 октября</div><div class="v">4 531,18 ₽</div><div class="state" style="color:#dd8c2d">Очень тонко</div></div>
-      <div class="month"><div class="m">30 ноября</div><div class="v" style="color:#df5870">−14 668,82 ₽</div><div class="state" style="color:#df5870">Разрыв</div></div>
-      <div class="month"><div class="m">31 декабря</div><div class="v" style="color:#df5870">−33 868,82 ₽</div><div class="state" style="color:#df5870">Разрыв</div></div>
-    </div>
-    <div class="grid-2 section">
-      <div class="actions">
-        <div class="action"><strong>Крупное поступление 29 июля — не свободные деньги.</strong>Из 439 555 ₽ уже запланированы возвраты в подушку, 25 000 ₽ лично и 130 000 ₽ на землю.</div>
-        <div class="action"><strong>Август заканчивается почти без запаса.</strong>По внесённым строкам остаётся только 4 531,18 ₽.</div>
-        <div class="action"><strong>К осени нужен дополнительный гарантированный доход.</strong>Иначе ноябрь и декабрь уходят в минус.</div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Дата</th><th>Поступление</th><th>Источник</th><th>Расход</th><th>Назначение</th><th>Остаток</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>27.07</td><td></td><td></td><td class="money neg">16 700 ₽</td><td>Сбербанк</td><td class="money">18 176,18 ₽</td></tr>
-            <tr><td>29.07</td><td class="money pos">439 555 ₽</td><td>Midea — зарплата</td><td class="money neg">20 000 ₽</td><td>Продукты</td><td class="money">437 731,18 ₽</td></tr>
-            <tr><td>30.07</td><td></td><td></td><td class="money neg">200 000 ₽</td><td>Возврат в подушку</td><td class="money">237 731,18 ₽</td></tr>
-            <tr><td>30.07</td><td></td><td></td><td class="money neg">71 000 ₽</td><td>Возврат займа за Казань в подушку</td><td class="money">166 731,18 ₽</td></tr>
-            <tr><td>30.07</td><td></td><td></td><td class="money neg">25 000 ₽</td><td>Любовь — личные деньги</td><td class="money">141 731,18 ₽</td></tr>
-            <tr><td>03.08</td><td></td><td></td><td class="money neg">130 000 ₽</td><td>На землю Ордынка</td><td class="money">11 731,18 ₽</td></tr>
-            <tr><td>05.08</td><td class="money pos">30 000 ₽</td><td>ЛУКОЙЛ</td><td class="money neg">20 000 ₽</td><td>Продукты, карманные, бассейн, медицина</td><td class="money">21 731,18 ₽</td></tr>
-            <tr><td>11.08</td><td></td><td></td><td class="money neg">20 000 ₽</td><td>Продукты, карманные, бассейн, медицина</td><td class="money">1 731,18 ₽</td></tr>
-            <tr><td>12.08</td><td class="money pos">69 000 ₽</td><td>Аренда</td><td class="money neg">8 200 ₽</td><td>Брусника и коммунальные</td><td class="money">62 531,18 ₽</td></tr>
-            <tr><td>13.08</td><td></td><td></td><td class="money neg">35 400 ₽</td><td>Ипотека</td><td class="money">27 131,18 ₽</td></tr>
-            <tr><td>14.08</td><td></td><td></td><td class="money neg">6 000 ₽</td><td>УК Монолит</td><td class="money">21 131,18 ₽</td></tr>
-            <tr><td>27.08</td><td></td><td></td><td class="money neg">16 600 ₽</td><td>Сбербанк</td><td class="money">4 531,18 ₽</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-<div class="footer">Premium light dashboard</div>
+  <div class="nav">
+    <button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})">Пульс</button>
+    <button onclick="alert('В макете: здесь будет переход к финансам')">Деньги</button>
+    <button onclick="alert('В макете: здесь будет здоровье')">Здоровье</button>
+    <button onclick="alert('В макете: здесь будет семья')">Семья</button>
+    <button onclick="alert('В макете: здесь будут проекты')">Проекты</button>
+  </div>
+  <div class="footer">Макет · Пульс Любови</div>
 </div>
+<script>
+document.querySelectorAll('.card').forEach(card=>{card.title='Нажми, чтобы раскрыть детали';});
+</script>
 </body>
 </html>
